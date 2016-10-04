@@ -59,7 +59,32 @@ public class NodePositionListTester {
 		} 
 		
 		showElements(w1); 
-
+		
+		
+		System.out.println("Testing fowad iterator");
+		NodePositionListCopy_1<Integer> w2 = new NodePositionListCopy_1<Integer> (new PositionListForwardIteratorMaker<>()); 
+		NodePositionListCopy_1<Integer> q2 = new NodePositionListCopy_1<Integer> (); 
+		
+		q2.addFirst(10); 
+		
+		w2.addFirst(5); 
+		w2.addFirst(3); 
+		
+		w2.addLast(10); 
+		w2.addLast(13); 
+		try {
+			Position<Integer> p = w2.first();
+			w2.addAfter(p, 2); 
+			p = w2.next(p); 
+			w2.addAfter(p, 34); 
+			w2.addBefore(p, 40); 
+//			p = q.first(); 
+//			w2.addAfter(p, 89); 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		
+		showElements(w2);
 
 	}
 
