@@ -1,14 +1,19 @@
 package positionListLLDirect;
 
-import exceptionClasses.EmptyListException;
 import positionInterfaces.Position;
 
+/**
+ * Testing last excercise, adding a positionListIteratorMaker
+ * @author J.A. Sanchez Perez
+ *
+ */
 public class NodePositionListTester {
 
 	public static void main(String[] args) {
 		
-		NodePositionList<Integer> w = new NodePositionList_2<Integer> (); 
-		NodePositionList<Integer> q = new NodePositionList_2<Integer> (); 
+		NodePositionListCopy_1<Integer> w = new NodePositionListCopy_1<Integer> (); 
+		NodePositionListCopy_1<Integer> q = new NodePositionListCopy_1<Integer> (); 
+		
 		q.addFirst(10); 
 		
 		w.addFirst(5); 
@@ -28,11 +33,37 @@ public class NodePositionListTester {
 			e.printStackTrace();
 		} 
 		
-		showElements(w); 
+		showElements(w);
+		System.out.println("testing for backwards iterator");
+		
+		NodePositionListCopy_1<Integer> w1 = new NodePositionListCopy_1<Integer> ( new PositionListBackwardIteratorMaker<>()); 
+		NodePositionListCopy_1<Integer> q1 = new NodePositionListCopy_1<Integer> (new PositionListBackwardIteratorMaker<>()); 
+		
+		q1.addFirst(10); 
+		
+		w1.addFirst(5); 
+		w1.addFirst(3); 
+		
+		w1.addLast(10); 
+		w1.addLast(13); 
+		try {
+			Position<Integer> p = w1.first();
+			w1.addAfter(p, 2); 
+			p = w1.next(p); 
+			w1.addAfter(p, 34); 
+			w1.addBefore(p, 40); 
+//			p = q1.first(); 
+//			w1.addAfter(p, 89); 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		
+		showElements(w1); 
+
 
 	}
 
-	private static <E> void showElements(NodePositionList<E> w) {
+	private static <E> void showElements(NodePositionListCopy_1<E> w) {
 		for(E p : w) 
 			System.out.println(p); 
 	}
