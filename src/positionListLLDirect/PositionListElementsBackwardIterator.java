@@ -33,7 +33,6 @@ public class PositionListElementsBackwardIterator<T> implements Iterator<T>{
 
 	@Override
 	public T next() throws NoSuchElementException {
-		System.out.println("next of parent");
 		// TODO Auto-generated method stub
 		if(!hasNext()) throw new NoSuchElementException();
 		Position<T> ptr = current;

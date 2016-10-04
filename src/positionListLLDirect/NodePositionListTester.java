@@ -7,8 +7,8 @@ public class NodePositionListTester {
 
 	public static void main(String[] args) {
 		
-		NodePositionList<Integer> w = new NodePositionList<Integer> (); 
-		NodePositionList<Integer> q = new NodePositionList<Integer> (); 
+		NodePositionList<Integer> w = new NodePositionList_2<Integer> (); 
+		NodePositionList<Integer> q = new NodePositionList_2<Integer> (); 
 		q.addFirst(10); 
 		
 		w.addFirst(5); 
@@ -22,8 +22,8 @@ public class NodePositionListTester {
 			p = w.next(p); 
 			w.addAfter(p, 34); 
 			w.addBefore(p, 40); 
-			p = q.first(); 
-			w.addAfter(p, 89); 
+//			p = q.first(); 
+//			w.addAfter(p, 89); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
