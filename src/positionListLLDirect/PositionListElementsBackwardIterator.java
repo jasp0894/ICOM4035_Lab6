@@ -27,9 +27,6 @@ public class PositionListElementsBackwardIterator<T> implements Iterator<T>{
 	@Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
-		System.out.println("jajaja");
-		System.out.println("jajaja");
-		System.out.println("hasNext       of Parent");
 		return current!=null;
 		
 	}
